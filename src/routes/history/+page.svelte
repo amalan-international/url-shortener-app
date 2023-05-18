@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Copyright from '$lib/components/Copyright.svelte';
+	import Copyright from '$lib/components/copyright.svelte';
 </script>
 
 <svelte:head>
