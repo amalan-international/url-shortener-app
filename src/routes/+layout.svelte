@@ -23,7 +23,7 @@
 				<LightSwitch />
 				<a
 					class="btn-icon btn-icon-sm hover:variant-soft-primary"
-					href="https://github.com/yudayahya"
+					href="https://github.com/yudayahya/url-shortener-svelte"
 					target="_blank"
 					rel="external"
 				>
