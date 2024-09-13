@@ -3,6 +3,7 @@ import { superValidate } from 'sveltekit-superforms/server';
 import { fail } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 import shortenerApi from '../apis/shortener-api';
+import { zod } from 'sveltekit-superforms/adapters';
 
 const validationSchema = z.object({
 	source: z.string().url('Must be a valid URL'),
@@ -10,13 +11,13 @@ const validationSchema = z.object({
 });
 
 export const load: PageServerLoad = async () => {
-	const form = await superValidate(validationSchema);
+	const form = await superValidate(zod(validationSchema));
 	return { form };
 };
 
 export const actions: Actions = {
 	default: async ({ request }) => {
-		const form = await superValidate(request, validationSchema);
+		const form = await superValidate(request, zod(validationSchema));
 		if (!form.valid) return fail(422, { form });
 
 		try {

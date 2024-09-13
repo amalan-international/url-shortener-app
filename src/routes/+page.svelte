@@ -8,6 +8,7 @@
 	import { writable, type Writable } from 'svelte/store';
 	import type { formActionApiResult } from './+page';
 	import GeneratedResultCard from '$lib/components/generated-result-card.svelte';
+	import { zod } from 'sveltekit-superforms/adapters';
 
 	export let data: PageData;
 
@@ -20,9 +21,8 @@
 	});
 
 	const { form, enhance, errors } = superForm(data.form, {
-		validators: validationSchema,
+		validators: zod(validationSchema),
 		validationMethod: 'oninput',
-		defaultValidator: 'keep',
 		onSubmit() {
 			isLoading.set(true);
 		},
