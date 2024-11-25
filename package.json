@@ -18,7 +18,7 @@
 		"@floating-ui/dom": "^1.2.8",
 		"@skeletonlabs/skeleton": "^1.5.1",
 		"@sveltejs/adapter-node": "^5.2.2",
-		"@sveltejs/kit": "^2.4.0",
+		"@sveltejs/kit": "^2.8.3",
 		"@sveltejs/vite-plugin-svelte": "^3.1.2",
 		"@tailwindcss/forms": "^0.5.3",
 		"@tailwindcss/typography": "^0.5.9",
